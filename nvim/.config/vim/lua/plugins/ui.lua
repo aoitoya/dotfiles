@@ -1,10 +1,11 @@
 return {
+  { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
   { 'folke/todo-comments.nvim', event = 'VimEnter' },
   {
     'AlexvZyl/nordic.nvim',
     lazy = false,
     priority = 1000,
-    config = function() require('nordic').load() end,
+    config = function() require('nordic').load {} end,
   },
   {
     'folke/which-key.nvim',

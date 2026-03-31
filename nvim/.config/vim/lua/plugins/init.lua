@@ -7,37 +7,11 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({
-  { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-
-  { 'stevearc/conform.nvim', event = { 'BufWritePre' }, cmd = { 'ConformInfo' } },
-  { 'mfussenegger/nvim-lint', event = { 'BufReadPre', 'BufNewFile' } },
-
-  { 'rmagatti/auto-session', lazy = false },
-
+require('lazy').setup {
   require 'plugins.ui',
   require 'plugins.lsp',
   require 'plugins.completion',
   require 'plugins.snacks',
   require 'plugins.treesitter',
   require 'plugins.utils',
-  require 'plugins.lualine',
-}, {
-  ui = {
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
-    },
-  },
-})
+}

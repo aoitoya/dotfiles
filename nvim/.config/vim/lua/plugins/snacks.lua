@@ -34,7 +34,6 @@ return {
     { '<leader>n', function() Snacks.picker.notifications() end, desc = 'Notification History' },
     { '<leader>e', function() Snacks.explorer() end, desc = 'File Explorer' },
     -- find
-    { '<leader>fb', function() Snacks.picker.buffers() end, desc = 'Buffers' },
     { '<leader>fc', function() Snacks.picker.files { cwd = vim.fn.stdpath 'config' } end, desc = 'Find Config File' },
     { '<leader>ff', function() Snacks.picker.files() end, desc = 'Find Files' },
     { '<leader>fg', function() Snacks.picker.git_files() end, desc = 'Find Git Files' },
@@ -48,7 +47,6 @@ return {
     { '<leader>gS', function() Snacks.picker.git_stash() end, desc = 'Git Stash' },
     { '<leader>gd', function() Snacks.picker.git_diff() end, desc = 'Git Diff (Hunks)' },
     { '<leader>gf', function() Snacks.picker.git_log_file() end, desc = 'Git Log File' },
-    -- gh
     { '<leader>gi', function() Snacks.picker.gh_issue() end, desc = 'GitHub Issues (open)' },
     { '<leader>gI', function() Snacks.picker.gh_issue { state = 'all' } end, desc = 'GitHub Issues (all)' },
     { '<leader>gp', function() Snacks.picker.gh_pr() end, desc = 'GitHub Pull Requests (open)' },

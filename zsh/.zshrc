@@ -116,9 +116,12 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/usr/sbin
 export PATH=$PATH:$HOME/.local/mindustry
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.bun/bin
+export PATH=$PATH:$HOME/.local/cmdline-tools/bin/
+export PATH=$PATH:$HOME/.local/flutter/bin/
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 
@@ -356,5 +359,13 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$PATH:$HOME/android-studio/bin"
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 alias vim="NVIM_APPNAME=vim nvim"
+
+export EDITOR=nvim
+export VISUAL=nvim
+alias cdf='cd "$(fd -t d . | fzf --style minimal --preview "ls -1hAF {}")"'

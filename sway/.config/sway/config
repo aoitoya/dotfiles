@@ -92,9 +92,6 @@ output * bg /home/toya/Pictures/bg.jpeg fill
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
-
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -233,6 +230,7 @@ bindsym $mod+r mode "resize"
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 
+    bindsym $mod+y exec brave-browser
 #
 # Status Bar:
 #
@@ -245,3 +243,7 @@ bar {
 }
 
 include /etc/sway/config.d/*
+
+exec wlsunset
+
+for_window [class="floating-brave"] floating enable

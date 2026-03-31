@@ -7,31 +7,29 @@ return {
     },
   },
   {
-    'folke/todo-comments.nvim',
-    event = 'VimEnter',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = { signs = false },
-  },
-  {
-    'folke/zen-mode.nvim',
-    keys = {
-      { '<leader>z', '<cmd>ZenMode<cr>', desc = 'Toggle Zen Mode' },
+    'chrisgrieser/nvim-origami',
+    event = 'VeryLazy',
+    opts = {
+      autoFold = {
+        enabled = false,
+      },
     },
-  },
-  {
-    'stevearc/oil.nvim',
-    keys = {
-      { '-', '<cmd>Oil<cr>', desc = 'Open parent directory' },
-    },
-    opts = {},
+
+    init = function()
+      vim.opt.foldlevel = 99
+      vim.opt.foldlevelstart = 99
+    end,
   },
   {
     'nvim-mini/mini.nvim',
     version = '*',
     config = function()
       require('mini.ai').setup()
+      require('mini.icons').setup()
       require('mini.pairs').setup()
+      require('mini.diff').setup()
       require('mini.surround').setup()
+      require('mini.statusline').setup()
     end,
   },
 }
